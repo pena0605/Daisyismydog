@@ -28,3 +28,56 @@ function add() {
  
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Calculator</title>
+
+    <script>
+        function calculate() {
+            // Get values from inputs
+            let PV = parseFloat(document.getElementById("pv").value);
+            let n = parseFloat(document.getElementById("years").value);
+            let r = parseFloat(document.getElementById("rate").value);
+
+            // Monthly interest rate
+            let monthlyRate = r / 100 / 12;
+
+            // Number of monthly payments
+            let payments = n * 12;
+
+            // Monthly payment formula
+            let P =
+                (monthlyRate * PV) /
+                (1 - Math.pow(1 + monthlyRate, -payments));
+
+            // Display results
+            document.getElementById("loanDisplay").textContent = PV.toFixed(2);
+            document.getElementById("yearDisplay").textContent = n;
+            document.getElementById("rateDisplay").textContent = r.toFixed(2);
+            document.getElementById("paymentDisplay").textContent = P.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Loan Payment Calculator</h1>
+
+    <p>
+        Present Value (Loan Amount): <input id="pv"><br><br>
+        Years: <input id="years"><br><br>
+        Interest Rate (%): <input id="rate"><br><br>
+
+        <button onclick="calculate()">Calculate Payment</button>
+    </p>
+
+    <p>
+        If you get a $<span id="loanDisplay">0</span> loan for
+        <span id="yearDisplay">0</span> years at an interest rate of
+        <span id="rateDisplay">0</span>%,
+        your monthly payment will be
+        $<span id="paymentDisplay">0.00</span>.
+    </p>
+</body>
+</html>
+
