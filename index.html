@@ -1,36 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JAVA</title>
-
-<h1>Java example calculator</h1>
-<script>
-function add() {
-  let PV = document.getElementById("fn").value;
-  let r = document.getElementById("sn").value;
-  let n = document.getElementById("sn").value;
-  let P = ((r/100/12) * PV) / (1-(1+(r/100/12))**-(n*12));
-  document.getElementById("ans").innerHTML = PV;
-}
-</script>
-</head>
-<body>
-    <h3>This is a sample Java and HTML doc.</h3>
-    <p>Present value-# you want to borrow: <input id="fn"> <br>
-    Years: <input id="sn"> <br>
-    Interest: <input id="tn"> <br>
-    <button onclick="add()"> Add the Numbers </button>
-    </p>
-
-  <p>
-    If you get a $<span id="fn"></span> loan for <span id="tn"></span> years at an interest rate of <span id="sn"></span>%, your monthly paymnt will be $<span id="P"></span></p>
-
- 
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
     <title>Loan Calculator</title>
 
     <script>
@@ -78,53 +48,5 @@ function add() {
         your monthly payment will be
         $<span id="paymentDisplay">0.00</span>.
     </p>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Loan Calculator</title>
-
-    <script>
-        function calculate() {
-            let PV = parseFloat(document.getElementById("pv").value);
-            let years = parseFloat(document.getElementById("years").value);
-            let annualRate = parseFloat(document.getElementById("rate").value);
-
-            // Convert annual rate and years for the formula
-            let r = annualRate / 100 / 12;
-            let n = years * 12;
-
-            // Formula requested
-            let P = (r * PV) / (1 - (1 + r) ** -n);
-
-            // Display values in the sentence
-            document.getElementById("loanDisplay").innerHTML = PV.toFixed(2);
-            document.getElementById("yearDisplay").innerHTML = years;
-            document.getElementById("rateDisplay").innerHTML = annualRate.toFixed(2);
-            document.getElementById("paymentDisplay").innerHTML = P.toFixed(2);
-        }
-    </script>
-</head>
-
-<body>
-    <h1>Loan Calculator</h1>
-
-    <p>
-        Loan Amount: <input id="pv"><br><br>
-        Years: <input id="years"><br><br>
-        Interest Rate (%): <input id="rate"><br><br>
-
-        <button onclick="calculate()">Calculate</button>
-    </p>
-
-    <p>
-        If you get a $<span id="loanDisplay">0.00</span> loan for
-        <span id="yearDisplay">0</span> years at an interest rate of
-        <span id="rateDisplay">0.00</span>%,
-        your monthly payment will be
-        $<span id="paymentDisplay">0.00</span>.
-    </p>
-
 </body>
 </html>
